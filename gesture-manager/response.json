@@ -1,0 +1,1 @@
+{"statusCode": 200, "body": "{\"message\": \"Event successfully pushed to SQS\", \"messageId\": \"3389f011-c232-4292-bd19-27d27c2520bc\", \"event\": {\"test\": \"message\", \"topic\": \"robo/feedback\"}}"}

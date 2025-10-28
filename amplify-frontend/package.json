@@ -1,0 +1,83 @@
+{
+  "name": "robot-agentic-ai-frontend",
+  "version": "1.0.0",
+  "description": "AI-powered robot control and monitoring web application with AWS Bedrock AgentCore, real-time chat interface, and voice synthesis",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "@aws-amplify/ui-react": "^6.0.0",
+    "@aws-sdk/client-bedrock-agentcore": "^3.847.0",
+    "@aws-sdk/client-bedrock-runtime": "^3.846.0",
+    "@aws-sdk/client-cognito-identity": "^3.883.0",
+    "@aws-sdk/client-lambda": "^3.893.0",
+    "@aws-sdk/client-polly": "^3.893.0",
+    "@aws-sdk/client-s3": "^3.893.0",
+    "@aws-sdk/client-sts": "^3.883.0",
+    "@aws-sdk/credential-provider-cognito-identity": "^3.883.0",
+    "@aws-sdk/s3-request-presigner": "^3.893.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.2",
+    "@mui/lab": "^7.0.0-beta.17",
+    "@mui/material": "^7.3.2",
+    "@mui/x-date-pickers": "^8.11.1",
+    "@uiw/react-json-view": "^2.0.0-alpha.38",
+    "aws-amplify": "^6.15.5",
+    "lucide-react": "^0.460.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "react-scripts": "5.0.1",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "@aws-amplify/backend": "^1.16.1",
+    "@aws-amplify/backend-cli": "^1.8.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "keywords": [
+    "robot-control",
+    "ai",
+    "aws-bedrock",
+    "agentcore",
+    "voice-synthesis",
+    "polly",
+    "amplify",
+    "react",
+    "typescript",
+    "material-ui",
+    "real-time-chat",
+    "iot",
+    "robotics"
+  ],
+  "author": "Robot Agentic AI Team",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hi-space/robot-agentic-ai.git"
+  }
+}

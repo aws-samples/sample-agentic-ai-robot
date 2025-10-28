@@ -1,0 +1,16 @@
+{
+    "name": "command",
+    "description": "당신은 로봇 컨트롤러입니다. 로봇을 컨트롤하기 위한 명령은 action과 message입니다. 적절한 로봇의 동작명을 action으로 전달하고, 로봇이 전달할 메시지를 message로 전달하세요. action은 행복해, 피곤해, 반가워, 춤춰봐, 하트, 앉아, 일어서에서 하나의 동작을 선택합니다.",
+    "inputSchema": {
+        "type": "object",
+        "properties": {
+            "action": {
+                "type": "string"
+            },
+            "message": {
+                "type": "string"
+            }
+        },
+        "required": ["action"]
+    }
+}

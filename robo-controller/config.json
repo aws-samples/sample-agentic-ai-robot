@@ -1,0 +1,8 @@
+{
+  "region": "ap-northeast-2",
+  "projectName": "robo",
+  "accountId": "533267442321",
+  "topic": "robot/control",
+  "lambda_function_arn": "arn:aws:lambda:ap-northeast-2:533267442321:function:lambda-robo-controller-for-robo",
+  "lambda_function_name": "lambda-robo-controller-for-robo"
+}

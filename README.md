@@ -1,3 +1,10 @@
+# Agentic RoboDog 
+
+COEX seoul에서 10월 14-16까지 진행되는 AWS Industry Week에서 진행되는 Agentic RoboDog에 대한 Repository입니다. 주요 Architecture는 아래를 참조하세요.
+
+<img width="800" alt="architecture_robo" src="https://github.com/user-attachments/assets/207d807a-1cd8-495a-914d-26f68262f4ca" />
+
+
 # Robot Agentic AI with Amazon Bedrock and MCP
 
 This sample demonstrates how to build an intelligent robot control system using Amazon Bedrock models, Model Context Protocol (MCP), and AWS services. The project showcases agentic AI patterns for real-time robot command processing, emergency detection, and human-robot interaction.

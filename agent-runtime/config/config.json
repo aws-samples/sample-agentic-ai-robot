@@ -1,0 +1,23 @@
+{
+    "region": "us-west-2",
+    "accountId": "533267442321",
+    "projectName": "robo",
+    "model_id": "us.anthropic.claude-3-5-haiku-20241022-v1:0",
+    "s3_bucket_name": "industry-robot-detected-images",
+    "agentcore_gateway_iam_role": "arn:aws:iam::533267442321:role/AgentCoreGatewayRoleForrobo",
+    "cognito": {
+      "user_pool_name": "robo-agentcore-user-pool",
+      "user_pool_id": "us-west-2_xtKBuME8v",
+      "client_name": "robo-agentcore-client",
+      "client_id": "5iot27ir5hquen7nk70g2c685l",
+      "test_username": "robo-test-user@example.com",
+      "test_password": "TestPassword123!"
+    },
+    "lambda_function_arn": "arn:aws:lambda:us-west-2:533267442321:function:lambda-mcp-interface-for-robo",
+    "secret_name": "robo/credentials",
+    "gateway_name": "robo",
+    "gateway_url": "https://robo-zyqd8iue49.gateway.bedrock-agentcore.us-west-2.amazonaws.com",
+    "gateway_id": "robo-zyqd8iue49",
+    "target_name": "mcp-interface",
+    "target_id": "EEA5BYPFIM"
+  }
