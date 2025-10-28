@@ -160,7 +160,7 @@ def get_cognito_config(cognito_config):
     if not username or not password:
         print("No test username found in config, using default username and password. Please check config.json and update the test username and password.")
         username = f"{projectName}-test-user@example.com"
-        password = "TestPassword123!"        
+        password = "YOUR_DEFAULT_PASSWORD"        
         cognito_config['test_username'] = username
         cognito_config['test_password'] = password
     

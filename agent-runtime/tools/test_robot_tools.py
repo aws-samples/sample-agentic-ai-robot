@@ -82,7 +82,7 @@ def test_analyze_robot_image():
     
     try:
         # Test with a sample S3 path (this will likely fail if the image doesn't exist, but we can test the function structure)
-        sample_image_path = "s3://robot-agentic-images-533267442321-us-west-2/detection-images/sample.png"
+        sample_image_path = "s3://YOUR_S3_BUCKET_NAME/detection-images/sample.png"
         
         print(f"Testing with sample image path: {sample_image_path}")
         result = robot_tools_module.analyze_robot_image(sample_image_path)

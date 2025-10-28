@@ -7,7 +7,7 @@
             "Action": [
                 "lambda:*"
             ],
-            "Resource": "arn:aws:lambda:ap-northeast-2:533267442321:function:*"
+            "Resource": "arn:aws:lambda:ap-northeast-2:123456789012:function:*"
         },
         {
             "Sid": "GetGateway",
@@ -15,7 +15,7 @@
             "Action": [
                 "bedrock-agentcore:*"
             ],
-            "Resource": "arn:aws:bedrock-agentcore:ap-northeast-2:533267442321:gateway/*"
+            "Resource": "arn:aws:bedrock-agentcore:ap-northeast-2:123456789012:gateway/*"
         },
         {
             "Sid": "SecretsManagerAccess",
@@ -122,7 +122,7 @@
                 "sqs:DeleteMessage"
             ],
             "Resource": [
-                "arn:aws:sqs:ap-northeast-2:533267442321:robo_feedback.fifo"
+                "arn:aws:sqs:ap-northeast-2:123456789012:robo_feedback.fifo"
             ]
         }
     ]

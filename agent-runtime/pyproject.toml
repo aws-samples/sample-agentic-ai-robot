@@ -1,7 +1,7 @@
 [project]
 name = "robot-agentic-ai-backend"
 version = "1.0.0"
-description = "FastAPI backend for robot control with Amazon Bedrock Claude 3.7 Sonnet"
+description = "FastAPI backend for robot control with Amazon Bedrock"
 authors = [
     {name = "Robot Agentic AI Team", email = "team@robot-agentic-ai.com"}
 ]

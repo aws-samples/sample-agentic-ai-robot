@@ -28,7 +28,7 @@
 ```json
 {
   "REACT_APP_AWS_REGION": "us-west-2",
-  "REACT_APP_AGENT_RUNTIME_ARN": "arn:aws:bedrock-agentcore:us-west-2:533267442321:runtime/robot_strands_agent-gezn8P6Qg0",
+  "REACT_APP_AGENT_RUNTIME_ARN": "arn:aws:bedrock-agentcore:us-west-2:YOUR_AWS_ACCOUNT_ID:runtime/robot_strands_agent-gezn8P6Qg0",
   "REACT_APP_QUALIFIER": "DEFAULT"
 }
 ```
@@ -37,10 +37,10 @@
 ```json
 {
   "auth": {
-    "user_pool_id": "us-west-2_bfM9iAqcD",
+    "user_pool_id": "YOUR_USER_POOL_ID",
     "aws_region": "us-west-2",
-    "user_pool_client_id": "pvmqal51g44f2p130pvgimjn2",
-    "identity_pool_id": "us-west-2:14d8995f-a7ae-4439-8691-e0ababc244e6",
+    "user_pool_client_id": "YOUR_USER_POOL_CLIENT_ID",
+    "identity_pool_id": "YOUR_IDENTITY_POOL_ID",
     "mfa_methods": [],
     "standard_required_attributes": ["email"],
     "username_attributes": ["email"],
@@ -54,7 +54,7 @@
     }
   },
   "data": {
-    "url": "https://oacp2uo3cfeftbzgfuxsisjona.appsync-api.us-west-2.amazonaws.com/graphql",
+    "url": "YOUR_GRAPHQL_API_URL",
     "aws_region": "us-west-2",
     "default_authorization_type": "AWS_IAM",
     "authorization_types": ["AMAZON_COGNITO_USER_POOLS"]
@@ -112,7 +112,7 @@ await initializeEnvConfig()
 ```json
 {
   "REACT_APP_AWS_REGION": "us-west-2",
-  "REACT_APP_AGENT_RUNTIME_ARN": "arn:aws:bedrock-agentcore:us-west-2:533267442321:runtime/robot_strands_agent-gezn8P6Qg0",
+  "REACT_APP_AGENT_RUNTIME_ARN": "arn:aws:bedrock-agentcore:us-west-2:YOUR_AWS_ACCOUNT_ID:runtime/robot_strands_agent-gezn8P6Qg0",
   "REACT_APP_QUALIFIER": "DEFAULT",
   "REACT_APP_LAMBDA_FUNCTION_NAME": "lambda-robo-controller-for-robo",
   "REACT_APP_LAMBDA_REGION": "ap-northeast-2"

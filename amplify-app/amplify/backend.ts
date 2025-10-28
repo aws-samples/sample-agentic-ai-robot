@@ -20,7 +20,7 @@ backend.auth.resources.authenticatedUserIamRole.addToPrincipalPolicy(
     ],
     resources: [
       '*',
-      'arn:aws:lambda:ap-northeast-2:533267442321:function:lambda-robo-controller-for-robo',
+      'arn:aws:lambda:ap-northeast-2:YOUR_AWS_ACCOUNT_ID:function:lambda-robo-controller-for-robo',
     ],
   })
 );
@@ -32,7 +32,7 @@ backend.auth.resources.authenticatedUserIamRole.addToPrincipalPolicy(
       's3:GetObject',
     ],
     resources: [
-      'arn:aws:s3:::industry-robot-detected-images/*',
+      'arn:aws:s3:::YOUR_S3_BUCKET_NAME/*',
     ],
   })
 );

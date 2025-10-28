@@ -1,6 +1,6 @@
 {
   "region": "ap-northeast-2",
   "projectName": "robo",
-  "accountId": "533267442321",
-  "lambda_function_arn": "arn:aws:lambda:ap-northeast-2:533267442321:function:lambda-gesture-manager-for-robo"
+  "accountId": "123456789012",
+  "lambda_function_arn": "arn:aws:lambda:ap-northeast-2:123456789012:function:lambda-gesture-manager-for-robo"
 }
