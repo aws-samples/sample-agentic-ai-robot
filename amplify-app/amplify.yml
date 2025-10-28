@@ -1,0 +1,23 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Installing dependencies..."
+        - npm ci
+        - echo "Copying env.json to src directory..."
+        - cp src/env.json src/env.json
+        - echo "TypeScript compilation check..."
+        - npx tsc --noEmit
+    build:
+      commands:
+        - echo "Building the React app..."
+        - npm run build
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
+      - .npm/**/*

@@ -1,91 +1,200 @@
-# Robot Agentic AI with Amazon Bedrock and MCP
+<div align="center">
+  <img src="./assets/logo.png" alt="Logo" width="100"/>
+  
+  <h1>
+      Agentic AI Robot: Industrial Safety Monitoring and Control
+  </h1>
 
-This sample demonstrates how to build an intelligent robot control system using Amazon Bedrock models, Model Context Protocol (MCP), and AWS services. The project showcases agentic AI patterns for real-time robot command processing, emergency detection, and human-robot interaction.
+  <p>
+    <a href="./README.md">English</a>
+    ◆ <a href="./README-ko.md">한국어</a>
+  </p>
+</div>
 
-## Architecture Overview
+This project provides a reference architecture for building a **Physical AI** system that demonstrates the convergence of **Agentic AI**, **IoT**, and **Robotics**. It showcases how Physical AI bridges the gap between digital intelligence and physical action by combining Agentic AI reasoning, Robotic autonomy, and IoT sensing to create systems capable of autonomous decision-making and real-world action in industrial environments.
 
-The sample implements a multi-layered architecture that combines:
+## Overview
 
-- **Amazon Bedrock Models** for natural language understanding and robot command generation
-- **Model Context Protocol (MCP)** for extensible tool integration and robot control
-- **Amazon Bedrock AgentCore Runtime** for scalable agent deployment
-- **AWS SQS FIFO queues** for reliable robot feedback and detection data streaming
-- **Amazon Cognito** for secure authentication and authorization
-- **AWS Secrets Manager** for secure token management
+This demo showcases a next-generation industrial safety management solution that combines Amazon Bedrock AgentCore, AWS IoT services, and Robotics. An intelligent robotic system autonomously patrols hazardous areas, collecting data and performing edge inference, while an AI agent comprehensively analyzes this information to control patrol routes and responses in real-time. This enables dramatically improved accident prevention rates and response speeds in industrial environments where human access is difficult or dangerous.
 
-## Key Features
+> [!IMPORTANT]
+> The examples provided in this repository are for experimental and educational purposes only. They demonstrate concepts and techniques but are not intended for direct use in production environments.
 
-### 🤖 Intelligent Robot Control
-- Natural language to robot command translation
-- Real-time command execution with priority queuing
-- Emergency stop and operational resume capabilities
-- Multi-modal robot interaction (voice, gesture, visual)
+<div align="center">
+  <img src="./assets/booth.jpeg" alt="Demo Booth Setup"/>
+</div>
 
-### 🛡️ Enterprise-Grade Security
-- Amazon Cognito authentication with automatic token refresh
-- AWS Secrets Manager for secure credential storage
-- Bearer token validation and renewal
-- Role-based access control for robot operations
+| Client App | Dashboard |
+|:---:|:---:|
+| [![Client App](./assets/client-app.png)](./assets/client-app.png) | [![Dashboard](./assets/dashboard.png)](./assets/dashboard.png) |
 
-### ⚡ Scalable Agent Runtime
-- Amazon Bedrock AgentCore Runtime deployment
-- Streaming response capabilities for real-time interaction
-- Debug mode for local development and testing
-- Configurable retry logic and error handling
+## 🎥 Demo Video
 
-## AWS Services Integration
+| Demo Video 1 | Demo Video 2 |
+|:---:|:---:|
+| [![Demo1](https://img.youtube.com/vi/plwrFz4fmFg/0.jpg)](https://www.youtube.com/shorts/plwrFz4fmFg) | [![Demo2](https://img.youtube.com/vi/qiS9_LSYsV8/0.jpg)](https://www.youtube.com/shorts/qiS9_LSYsV8) |
 
-- **Amazon Bedrock**: Language and vision models for reasoning and image analysis
-- **Amazon Bedrock AgentCore**: Agent runtime environment with MCP integration
-- **Amazon SQS**: FIFO queues for robot data streaming
-- **Amazon Cognito**: User authentication
-- **AWS Secrets Manager**: Secure credential storage
-- **Amazon S3**: Image storage for analysis
+*This project was showcased at AWS AI x Industry Week 2025*
 
-## Configuration Management
+---
 
-The sample uses a centralized configuration approach:
+## 🏗️ Architecture Overview
 
-```json
-{
-    "model_id": "us.anthropic.claude-3-5-haiku-20241022-v1:0",
-    "gateway_url": "your_mcp_gateway_url",
-    "cognito": {
-        "client_id": "your_cognito_client_id",
-        "test_username": "your_username",
-        "test_password": "your_password"
-    },
-    "feedback_queue_name": "robo_feedback",
-    "detection_queue_name": "robo_detection",
-    "gesture_queue_name": "robo_gesture"
-}
-```
+A **cloud-native, event-driven system** that integrates **Physical AI**, **Agentic AI**, **IoT** and **Robotics** for autonomous industrial monitoring.
 
-## What You'll Learn
+<img width="800" alt="architecture_robo" src="./assets/architecture.png" />
 
-- Building agentic AI systems with Amazon Bedrock
-- Integrating tools through Model Context Protocol (MCP)
-- Processing real-time data streams with SQS
-- Implementing secure authentication patterns
-- Deploying agents with Bedrock AgentCore Runtime
+## 🔍 Core Components
 
-## Use Cases
+### 🧠 Agentic AI for Autonomous Robotics
 
-1. **Industrial Safety**: Robots detecting emergency situations in facilities
-2. **Human-Robot Collaboration**: Gesture-based robot control in manufacturing
-3. **Facility Management**: Voice-controlled robots for maintenance tasks
+- Multi-modal understanding of environmental conditions (text, vision, and sensor data) 
+- **Dynamic Task Planning** and context-aware decision-making using **Strands Agent SDK**
+- AI Agent and MCP server deployed in the **Bedrock AgentCore** environment
+- Natural language to robot command translation through **MCP-integrated tools**
 
-## Prerequisites
+### 🗣️ Natural Language Command Interface
+- **Intent Recognition**: "Patrol zone A" → structured robot control commands
+- **Contextual Understanding**: Maintains conversation history and environmental context
+- **MCP Server Integration**: Translates high-level instructions into precise robotic actions
 
-- AWS Account with Bedrock access
-- Python 3.9+
-- Basic understanding of AI agents
+### 🤖 Physical AI System
+- The robot acts as an **autonomous agent** capable of real-world action
+- Performs patrols, detects hazards (e.g., fire, abnormal human gestures, gas leaks)
+- **Edge-Cloud Hybrid Processing**: Optimizes latency through distributed inference architecture
+
+### 📡 IoT and Edge Intelligence
+- Real-time sensor and telemetry data collection via **AWS IoT Core**
+- Edge inference for low-latency detection using **AWS IoT Greengrass**
+- Secure communication between robots and cloud systems
+
+### 📹 Real-time Video Processing & Analysis
+- Real-time video data streaming through **Amazon Kinesis Video Streams**
+- Video analysis through AI models on Greengrass or in the cloud
+- Real-time processing for hazardous situation detection
+
+### 📊 Data Integration & Visualization
+- Integration of robot status, system status, and IoT sensor metrics through **AWS IoT SiteWise**
+- Operational dashboards with **Amazon Managed Grafana**
+
+## ⚙️ Key AWS Services
+
+| **Service Category** | **AWS Service** | **Role in Architecture** |
+|---------------------|-----------------|-------------------------|
+| **🧠 Agentic AI** | Amazon Bedrock AgentCore | Agent runtime environment with MCP integration |
+| | Amazon Bedrock | Foundation models for reasoning and vision |
+| | AWS Lambda | MCP tool integration and robot control |
+| **🤖 Robotics & IoT** | AWS IoT Core | Device connectivity and messaging |
+| | AWS IoT Greengrass | Edge computing and local inference |
+| | Amazon SQS | Event-driven robot feedback streaming |
+| **📊 Data & Analytics** | AWS IoT SiteWise | Industrial data modeling and analytics |
+| | Amazon Managed Grafana | Real-time monitoring dashboards |
+| | Amazon Kinesis Video Streams | Live video processing and analysis |
+| **🔐 Security** | Amazon Cognito | User authentication and authorization |
+| | AWS Secrets Manager | Secure credential management |
+| **💻 Frontend** | AWS Amplify | Full-stack web application hosting |
+
+---
 
 ## Getting Started
 
-1. Clone the repository and navigate to the project directory
-2. Configure AWS credentials and update `config/config.json`
-3. Install dependencies: `uv pip install -r requirements.txt`
-5. Test the agent with natural language robot commands
+### Prerequisites
 
-This sample provides a comprehensive foundation for building intelligent robot control systems using AWS AI services and demonstrates best practices for agentic AI development in production environments.
+- **AWS Account** with Bedrock access enabled
+- **Python 3.9+** and pip
+- **Node.js 18+** and npm/yarn
+- **AWS CLI** configured with appropriate permissions
+- Basic understanding of AI agents and IoT concepts
+
+### Quick Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/aws-samples/sample-agentic-ai-robot.git
+   cd sample-agentic-ai-robot
+   ```
+
+2. **Environment Configuration**
+   ```bash
+   # Copy environment template
+   cp .env.template .env
+   
+   # Edit with your AWS resource values
+   nano .env
+   
+   # Generate all configuration files
+   python scripts/generate_configs.py
+   ```
+   
+   > 📋 See [CONFIGURATION.md](CONFIGURATION.md) for comprehensive environment setup instructions and configuration file management.
+
+3. **Deploy Backend Services**
+   ```bash
+   # Install backend dependencies
+   cd agent-runtime
+   pip install -r requirements.txt
+   
+   # Deploy AgentCore runtime
+   ./scripts/deploy.sh
+   ```
+
+4. **Setup Frontend Application**
+   ```bash
+   # Navigate to frontend directory
+   cd ../amplify-frontend
+   
+   # Install dependencies
+   npm install
+   
+   # Deploy Amplify backend
+   npx ampx sandbox
+   
+   # Start development server
+   npm start
+   ```
+
+5. **Deploy IoT Components**
+   ```bash
+   # Return to root directory
+   cd ..
+   
+   # Deploy feedback manager
+   cd feedback-manager
+   python create_feedback_manager.py
+   
+   # Deploy robot controller
+   cd ../robo-controller
+   python create_robo_controller.py
+   
+   # Deploy MCP gateway
+   cd ../agent-gateway
+   python mcp-interface/create_gateway_tool.py
+   ```
+
+### Project Structure
+
+| Component | Purpose | Technology |
+|-----------|---------|------------|
+| **agent-runtime** | AI agent backend | Amazon Bedrock, Python |
+| **agent-gateway** | MCP server for robot control | AWS Lambda, MCP |
+| **amplify-app** | Web interface | React, AWS Amplify |
+| **lambda-iot-managers** | IoT data processing | AWS Lambda, AWS IoT Core, SQS |
+| **lambda-robo-controller** | Direct robot commands | AWS Lambda |
+| **polly-tts** | Text-to-speech | AWS Polly |
+
+## Contributors
+
+We would like to thank the following contributors for their valuable contributions to this project:
+
+- **Development** - [Jinseon Lee](https://www.linkedin.com/in/jinseon-lee-160a2a13b), [Yoojung Lee](https://www.linkedin.com/in/yoo-lee), [Kyoungsu Park](https://www.linkedin.com/in/kyoungsu-park-9b9a1068), [YeonKyung Park](https://www.linkedin.com/in/yeon-kyung-park-790b52195), [Sejin Kim](https://www.linkedin.com/in/saygenie)
+- **Support** - [Cheolmin Ki](https://www.linkedin.com/in/cheolminki), [Yongjin Lee](https://www.linkedin.com/in/yongjin-lee-1167a710), [Hyewon Lee](https://www.linkedin.com/in/hyewon-l-629b55188), [Areum Lee](https://www.linkedin.com/in/areum-l-752258386)
+
+---
+
+## Security
+
+See [CONTRIBUTING](CONTRIBUTING.md#security-issue-notifications) for more information.
+
+## License
+
+This library is licensed under the MIT-0 License. See the [LICENSE](LICENSE) file.
