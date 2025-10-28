@@ -4,6 +4,13 @@ This project uses a centralized environment configuration system to simplify dep
 
 ## Configuration Structure
 
+| File | Purpose | Location |
+|------|---------|----------|
+| `.env` | Master environment variables | Root directory |
+| `config.json` | Agent runtime configuration | `agent-runtime/config/` |
+| `amplify_outputs.json` | Amplify backend config | `amplify-frontend/` |
+| `env.json` | Frontend environment | `amplify-frontend/src/` |
+
 ### 1. Environment Variables (.env)
 Create a `.env` file in the project root with your actual values:
 

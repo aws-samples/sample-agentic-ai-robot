@@ -1,30 +1,34 @@
-# 🧠 Agentic AI Runtime - 로봇 제어 백엔드
+# 🧠 Agentic AI Runtime - Robot Control Backend
 
-> **Amazon Bedrock 기반 지능형 로봇 제어 시스템**
+> **Intelligent Robot Control System Based on Amazon Bedrock**
 
-이 컴포넌트는 Agentic AI의 핵심 백엔드 서비스로, 자연어 명령을 이해하고 로봇 제어 명령으로 변환하는 지능형 에이전트를 구현합니다. Amazon Bedrock 모델을 활용하여 실시간 대화 처리와 로봇 제어 기능을 제공합니다.
+<p>
+  | <a href="./README.md">English</a> | <a href="./README-ko.md">한국어</a> |
+</p>
 
-## 🎯 주요 기능
+This component is the core backend service of Agentic AI, implementing an intelligent agent that understands natural language commands and converts them into robot control commands. It provides real-time conversation processing and robot control functionality using Amazon Bedrock models.
 
-### 🤖 지능형 로봇 제어
-- **자연어 명령 해석**: 사용자의 자연어 입력을 로봇 제어 명령으로 변환
-- **MCP 통합**: Model Context Protocol을 통한 확장 가능한 도구 연동
-- **명령 우선순위 관리**: 비상 상황과 일반 명령의 우선순위 처리
-- **실시간 응답**: 스트리밍을 통한 즉각적인 피드백 제공
+## 🎯 Key Features
 
-### 🧠 AI 에이전트 엔진
-- **Bedrock 모델**: 최신 생성형 AI 모델 활용
-- **대화 컨텍스트 관리**: 이전 대화 내용을 기억하는 컨텍스트 유지
-- **멀티모달 처리**: 텍스트, 이미지, 센서 데이터 통합 처리
-- **동적 계획 수립**: 상황에 따른 최적의 로봇 행동 계획
+### 🤖 Intelligent Robot Control
+- **Natural Language Command Interpretation**: Converts user natural language input into robot control commands
+- **MCP Integration**: Extensible tool integration through Model Context Protocol
+- **Command Priority Management**: Handles priority processing for emergency and general commands
+- **Real-time Response**: Provides immediate feedback through streaming
 
-### 🔄 실시간 데이터 처리
-- **SQS 스트리밍**: FIFO 큐를 통한 순차적 데이터 처리
-- **IoT 센서 통합**: 다양한 센서 데이터의 실시간 수집 및 분석
-- **이벤트 기반 처리**: 비동기 이벤트 처리로 높은 성능 보장
-- **오류 복구**: 자동 재시도 및 오류 처리 메커니즘
+### 🧠 AI Agent Engine
+- **Bedrock Models**: Utilizes latest generative AI models
+- **Conversation Context Management**: Maintains context remembering previous conversation content
+- **Multimodal Processing**: Integrates text, image, and sensor data processing
+- **Dynamic Planning**: Establishes optimal robot behavior plans based on situations
 
-## 🏗️ 시스템 아키텍처
+### 🔄 Real-time Data Processing
+- **SQS Streaming**: Sequential data processing through FIFO queues
+- **IoT Sensor Integration**: Real-time collection and analysis of various sensor data
+- **Event-based Processing**: Ensures high performance through asynchronous event processing
+- **Error Recovery**: Automatic retry and error handling mechanisms
+
+## 🏗️ System Architecture
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
@@ -40,66 +44,57 @@
                        └──────────────────┘    └─────────────────┘
 ```
 
-## 🚀 핵심 컴포넌트
+## 🚀 Core Components
 
 ### 1. Agent Manager (`core/agent_manager.py`)
-- Bedrock Claude 모델과의 직접 통신
-- 대화 세션 관리 및 컨텍스트 유지
-- 스트리밍 응답 처리
+- Direct communication with Bedrock Claude model
+- Conversation session management and context maintenance
+- Streaming response processing
 
 ### 2. MCP Manager (`core/mcp_manager.py`)
-- Model Context Protocol 서버 관리
-- 도구 호출 및 응답 처리
-- 로봇 제어 명령 변환
+- Model Context Protocol server management
+- Tool invocation and response processing
+- Robot control command conversion
 
 ### 3. Stream Processor (`core/stream_processor.py`)
-- SQS 큐에서 실시간 데이터 수신
-- IoT 센서 데이터 처리
-- 이벤트 기반 알림 시스템
+- Real-time data reception from SQS queues
+- IoT sensor data processing
+- Event-based notification system
 
 ### 4. Memory Hook (`memory/memory_hook.py`)
-- 대화 히스토리 저장 및 관리
-- 컨텍스트 기반 응답 생성
-- 장기 기억 시스템
+- Conversation history storage and management
+- Context-based response generation
+- Long-term memory system
 
-## 📋 지원하는 로봇 명령
+## 📋 Supported Robot Commands (Examples)
 
-### 기본 동작 명령
-| 명령 | 설명 | 예시 |
-|------|------|------|
-| `HAPPY` | 기쁜 상태 표현 | "오늘은 정말 멋지네요!" |
-| `NEUTRAL` | 중립적 상태 표현 | "일상적인 작업을 수행합니다" |
-| `SAD` | 슬픈 상태 표현 | "안타까운 상황이 발생했네요" |
-| `ANGRY` | 화난 상태 표현 | "위험한 상황을 감지했습니다!" |
+- **Patrol Command**: "Please patrol the danger zone"
+- **Video Command**: "Show me the video of where the fire occurred"
+- **Status Check**: "Tell me the current robot status"
+- **Emergency Stop**: "Stop immediately!"
 
-### 고급 명령 (확장 가능)
-- **순찰 명령**: "위험 구역을 순찰해 줘"
-- **영상 명령**: "화재가 발생한 곳의 영상을 보여줘"
-- **상태 확인**: "현재 로봇 상태를 알려줘"
-- **비상 정지**: "즉시 정지해!"
+## ⚙️ Installation and Execution
 
-## ⚙️ 설치 및 실행
-
-### 1. 환경 설정
+### 1. Environment Setup
 
 ```bash
-# 저장소 클론
+# Clone repository
 git clone <repository-url>
 cd agent-runtime
 
-# 가상환경 생성 및 활성화
+# Create and activate virtual environment
 uv venv
 source .venv/bin/activate
 
-# 의존성 설치
+# Install dependencies
 uv pip install -r requirements.txt
-# 또는 pyproject.toml 사용
+# Or use pyproject.toml
 uv sync
 ```
 
-### 2. 환경 변수 설정
+### 2. Environment Variable Configuration
 
-#### `config.json` 파일 설정
+#### `config.json` File Setup
 ```json
 {
     "model_id": "us.anthropic.claude-3-5-haiku-20241022-v1:0",
@@ -115,226 +110,162 @@ uv sync
 }
 ```
 
-#### 환경 변수 설정
+#### Environment Variable Setup
 ```bash
-# AWS 기본 설정 (IAM 역할 사용 시 불필요)
+# AWS basic configuration (not needed when using IAM roles)
 export AWS_REGION=us-west-2
 
-# Cognito 인증 설정 (config.json에서도 설정 가능)
+# Cognito authentication configuration (can also be set in config.json)
 export COGNITO_CLIENT_ID=your_cognito_client_id
 export COGNITO_USERNAME=your_cognito_username
 export COGNITO_PASSWORD=your_cognito_password
 
-# AWS Secrets Manager 설정
+# AWS Secrets Manager configuration
 export SECRET_NAME=your_secret_name_for_bearer_token
 ```
 
-**참고**: 대부분의 설정은 `config.json` 파일에서 관리됩니다. 환경 변수는 선택사항이며, `config.json`에 설정된 값이 우선됩니다.
+> **Note**: Most configurations are managed in the `config.json` file. Environment variables are optional, and values set in `config.json` take precedence.
 
-### 3. 실행 방법
+### 3. Execution Methods
 
-#### Bedrock AgentCore Runtime 배포 (권장)
+#### Bedrock AgentCore Runtime Deployment (Recommended)
 ```bash
-# Prerequisites 설치
+# Install prerequisites
 pip install bedrock-agentcore-starter-toolkit jq
 
-# AWS CLI 설정 확인
+# Check AWS CLI configuration
 aws sts get-caller-identity
 
-# 배포 실행
+# Execute deployment
 ./scripts/deploy.sh
 ```
 
-#### 개발 모드 (로컬 실행)
+#### Development Mode (Local Execution)
 ```bash
-# 직접 실행
+# Direct execution
 uv run python main.py
 
-# 또는 uvicorn 사용
+# Or use uvicorn
 uvicorn main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-#### Docker 실행
+#### Docker Execution
 ```bash
-# Docker 이미지 빌드
+# Build Docker image
 docker build -t agentic-ai-runtime .
 
-# Docker 컨테이너 실행
+# Run Docker container
 docker run -p 8000:8000 --env-file .env agentic-ai-runtime
 ```
 
-## 🔧 사용 방법
+## 🔧 Usage
 
-### 1. 기본 대화 시작
+### 1. Start Basic Conversation
 
 ```python
 from core.agent_manager import AgentManager
 from core.mcp_manager import MCPManager
 
-# Agent Manager 초기화
+# Initialize Agent Manager
 agent_manager = AgentManager()
 
-# MCP Manager 초기화
+# Initialize MCP Manager
 mcp_manager = MCPManager()
 
-# 대화 세션 시작
+# Start conversation session
 session_id = "user_session_001"
-user_message = "안녕하세요! 로봇을 기쁘게 만들어 주세요."
+user_message = "Hello! Please make the robot happy."
 
-# AI 응답 생성
+# Generate AI response
 response = await agent_manager.process_message(
     message=user_message,
     session_id=session_id
 )
 
-print(f"AI 응답: {response}")
+print(f"AI response: {response}")
 ```
 
-### 2. 로봇 제어 명령 실행
+### 2. Execute Robot Control Commands
 
 ```python
-# 로봇 제어 명령 생성
+# Create robot control command
 robot_command = {
     "action": "HAPPY",
-    "message": "오늘은 정말 멋진 하루네요!"
+    "message": "Today is really a wonderful day!"
 }
 
-# MCP를 통한 로봇 제어 실행
+# Execute robot control through MCP
 result = await mcp_manager.execute_robot_command(robot_command)
-print(f"로봇 제어 결과: {result}")
+print(f"Robot control result: {result}")
 ```
 
-### 3. 스트리밍 응답 처리
+### 3. Streaming Response Processing
 
 ```python
 from core.stream_processor import StreamProcessor
 
-# 스트리밍 프로세서 초기화
+# Initialize streaming processor
 stream_processor = StreamProcessor()
 
-# 실시간 데이터 수신
+# Receive real-time data
 async def handle_streaming_data():
     async for message in stream_processor.listen_to_queue("robo_feedback"):
-        print(f"수신된 피드백: {message}")
+        print(f"Received feedback: {message}")
         
-        # AI 에이전트가 피드백을 분석하고 응답 생성
+        # AI agent analyzes feedback and generates response
         ai_response = await agent_manager.analyze_feedback(message)
-        print(f"AI 분석 결과: {ai_response}")
+        print(f"AI analysis result: {ai_response}")
 
-# 스트리밍 시작
+# Start streaming
 await handle_streaming_data()
 ```
 
-## 🧪 테스트
+## 🧪 Testing
 
-### 1. 로컬 테스트
+### 1. Local Testing
 
 ```bash
-# 기본 기능 테스트
+# Basic functionality test
 python scripts/test_main.py
 
-# MCP 원격 연결 테스트
+# MCP remote connection test
 python scripts/test_mcp_remote.py
 
-# 로봇 도구 테스트
+# Robot tools test
 python tools/test_robot_tools.py
 ```
 
-### 2. 통합 테스트
+### 2. Integration Testing
 
 ```bash
-# 전체 시스템 통합 테스트
+# Full system integration test
 ./scripts/test_local.sh
 
-# 로그 확인
+# Check logs
 ./scripts/logs.sh
 ```
 
-### 3. 테스트 결과 예시
+### 3. Test Result Example
 
 ```
-🧠 Agent Runtime 테스트 시작
-✅ Bedrock 연결 성공
-✅ MCP 서버 연결 성공
-✅ SQS 큐 연결 성공
+🧠 Agent Runtime Test Started
+✅ Bedrock connection successful
+✅ MCP server connection successful
+✅ SQS queue connection successful
 
-🤖 로봇 제어 테스트:
-  입력: "로봇을 기쁘게 만들어 주세요"
-  출력: {"action": "HAPPY", "message": "정말 기쁩니다!"}
-  결과: 성공
+🤖 Robot Control Test:
+  Input: "Please make the robot happy"
+  Output: {"action": "HAPPY", "message": "I'm really happy!"}
+  Result: Success
 
-📊 스트리밍 테스트:
-  피드백 수신: {"status": "success", "timestamp": "2024-01-01T00:00:00Z"}
-  AI 분석: "로봇이 정상적으로 동작하고 있습니다."
+📊 Streaming Test:
+  Feedback received: {"status": "success", "timestamp": "2024-01-01T00:00:00Z"}
+  AI analysis: "The robot is operating normally."
 ```
 
-## 🔒 보안 및 인증
+## 📚 Additional Resources
 
-### AWS Cognito 인증
-```python
-from auth.access_token import AccessTokenManager
-
-# 토큰 관리자 초기화
-token_manager = AccessTokenManager()
-
-# 인증 토큰 획득
-access_token = await token_manager.get_access_token()
-
-# 토큰 갱신
-refreshed_token = await token_manager.refresh_token()
-```
-
-### AWS Secrets Manager
-```python
-import boto3
-import json
-
-# Secrets Manager에서 민감한 정보 로드
-secrets_client = boto3.client('secretsmanager')
-secret_response = secrets_client.get_secret_value(SecretId='your-secret-name')
-secret_data = json.loads(secret_response['SecretString'])
-```
-
-## 📊 모니터링 및 로깅
-
-### 로그 설정
-```python
-from utils.logger import setup_logger
-
-# 로거 설정
-logger = setup_logger(__name__)
-
-# 로그 레벨별 기록
-logger.info("Agent Runtime 시작")
-logger.warning("MCP 연결 지연 감지")
-logger.error("로봇 제어 실패")
-```
-
-### CloudWatch 통합
-- 자동 로그 수집 및 분석
-- 메트릭 대시보드 구성
-- 알림 설정
-
-## 🚀 성능 최적화
-
-### 비동기 처리
-- asyncio를 활용한 비동기 I/O
-- 동시 요청 처리로 높은 처리량 보장
-- 스트리밍 응답으로 지연 시간 최소화
-
-### 메모리 관리
-- 대화 히스토리 압축
-- 불필요한 컨텍스트 정리
-- 메모리 사용량 모니터링
-
-### 캐싱 전략
-- 자주 사용되는 응답 캐싱
-- 토큰 재사용으로 API 호출 최적화
-- Redis를 활용한 분산 캐싱 (선택사항)
-
-## 📚 추가 리소스
-
-- [Amazon Bedrock Claude 모델 가이드](https://docs.aws.amazon.com/bedrock/latest/userguide/claude.html)
-- [Model Context Protocol (MCP) 문서](https://modelcontextprotocol.io/)
-- [AWS Lambda 함수 개발 가이드](https://docs.aws.amazon.com/lambda/latest/dg/python-programming-model.html)
-- [Strands Agent SDK 문서](https://docs.strands.ai/)
+- [Amazon Bedrock Claude Model Guide](https://docs.aws.amazon.com/bedrock/latest/userguide/claude.html)
+- [Model Context Protocol (MCP) Documentation](https://modelcontextprotocol.io/)
+- [AWS Lambda Function Development Guide](https://docs.aws.amazon.com/lambda/latest/dg/python-programming-model.html)
+- [Strands Agent SDK Documentation](https://docs.strands.ai/)

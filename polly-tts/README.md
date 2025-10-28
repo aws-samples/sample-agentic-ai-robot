@@ -1,30 +1,34 @@
-# 🎵 AWS Polly TTS 시스템
+# 🎵 AWS Polly TTS System
 
-> **로봇 음성 합성 및 텍스트-음성 변환 서비스**
+> **Robot Voice Synthesis and Text-to-Speech Conversion Service**
 
-이 컴포넌트는 AWS Polly를 활용하여 텍스트를 자연스러운 한국어 음성으로 변환하는 TTS(Text-to-Speech) 시스템입니다. 로봇이 AI 응답을 음성으로 전달하거나, 상황에 따른 음성 안내를 제공할 때 사용됩니다.
+<p>
+  | <a href="./README.md">English</a> | <a href="./README-ko.md">한국어</a> |
+</p>
 
-## 🎯 주요 기능
+This component is a TTS (Text-to-Speech) system that converts text into natural Korean voice using AWS Polly. It is used when robots deliver AI responses through voice or provide voice guidance according to situations.
 
-### 🎤 고품질 음성 합성
-- **Neural Engine**: AWS Polly의 최신 Neural Engine 사용
-- **한국어 지원**: Seoyeon, Jihye 등 한국어 음성 지원
-- **SSML 지원**: 음성 속도, 톤, 강세 등 세밀한 제어
-- **다양한 포맷**: MP3, OGG, PCM 등 다양한 오디오 포맷 지원
+## 🎯 Key Features
 
-### ⚡ 실시간 처리
-- **빠른 응답**: 낮은 지연시간으로 음성 생성
-- **스트리밍**: 실시간 스트리밍 음성 출력
-- **캐싱**: 자주 사용되는 음성 캐싱으로 성능 최적화
-- **배치 처리**: 여러 텍스트를 한 번에 처리
+### 🎤 High-Quality Voice Synthesis
+- **Neural Engine**: Uses AWS Polly's latest Neural Engine
+- **Korean Support**: Support for Korean voices like Seoyeon, Jihye
+- **SSML Support**: Fine control of voice speed, tone, emphasis, etc.
+- **Various Formats**: Support for various audio formats like MP3, OGG, PCM
 
-### 🎛️ 음성 제어
-- **속도 조절**: 음성 재생 속도 동적 조절
-- **볼륨 제어**: 음성 크기 조절
-- **일시정지/재생**: 음성 재생 제어
-- **반복 재생**: 특정 구간 반복 재생
+### ⚡ Real-time Processing
+- **Fast Response**: Low-latency voice generation
+- **Streaming**: Real-time streaming voice output
+- **Caching**: Performance optimization through caching frequently used voices
+- **Batch Processing**: Process multiple texts at once
 
-## 🏗️ 시스템 아키텍처
+### 🎛️ Voice Control
+- **Speed Adjustment**: Dynamic voice playback speed adjustment
+- **Volume Control**: Voice volume adjustment
+- **Pause/Play**: Voice playback control
+- **Repeat Playback**: Repeat specific sections
+
+## 🏗️ System Architecture
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
@@ -39,53 +43,53 @@
                        └──────────────────┘    └─────────────────┘
 ```
 
-## 📋 지원하는 음성 설정
+## 📋 Supported Voice Settings
 
-### 한국어 음성 목록
-| Voice ID | 성별 | 특징 | 사용 예시 |
-|----------|------|------|-----------|
-| `Seoyeon` | 여성 | 자연스럽고 친근한 목소리 | 일반적인 안내, 대화 |
-| `Jihye` | 여성 | 명확하고 전문적인 목소리 | 공지사항, 경고 메시지 |
+### Korean Voice List
+| Voice ID | Gender | Characteristics | Usage Example |
+|----------|--------|-----------------|---------------|
+| `Seoyeon` | Female | Natural and friendly voice | General guidance, conversation |
+| `Jihye` | Female | Clear and professional voice | Announcements, warning messages |
 
-### 음성 포맷 옵션
-| 포맷 | 설명 | 용도 |
-|------|------|------|
-| `mp3` | 압축된 오디오 포맷 | 일반적인 음성 출력 |
-| `ogg_vorbis` | 오픈소스 오디오 포맷 | 웹 브라우저 호환성 |
-| `pcm` | 무압축 오디오 포맷 | 고품질 음성 처리 |
+### Voice Format Options
+| Format | Description | Usage |
+|--------|-------------|-------|
+| `mp3` | Compressed audio format | General voice output |
+| `ogg_vorbis` | Open source audio format | Web browser compatibility |
+| `pcm` | Uncompressed audio format | High-quality voice processing |
 
-## ⚙️ 설치 및 설정
+## ⚙️ Installation and Setup
 
-### 1. AWS Polly 클라이언트 설정
+### 1. AWS Polly Client Setup
 
 ```python
 import boto3
 import json
 
-# Polly 클라이언트 생성
+# Create Polly client
 polly_client = boto3.client('polly', region_name='us-west-2')
 
-# 사용 가능한 음성 목록 조회
+# Get available voice list
 voices = polly_client.describe_voices(LanguageCode='ko-KR')
 for voice in voices['Voices']:
     print(f"Voice ID: {voice['Id']}, Name: {voice['Name']}")
 ```
 
-### 2. 기본 TTS 함수 구현
+### 2. Basic TTS Function Implementation
 
 ```python
 def synthesize_speech(text, voice_id='Seoyeon', output_format='mp3', speed=100):
-    """텍스트를 음성으로 변환하는 함수"""
+    """Function to convert text to voice"""
     
-    # SSML 텍스트 생성 (속도 조절 포함)
+    # Generate SSML text (including speed control)
     ssml_text = f'<speak><prosody rate="{speed}%">{text}</prosody></speak>'
     
     try:
-        # Polly를 사용한 음성 합성
+        # Voice synthesis using Polly
         response = polly_client.synthesize_speech(
             Text=ssml_text,
             TextType='ssml',
-            Engine='neural',  # Neural Engine 사용
+            Engine='neural',  # Use Neural Engine
             LanguageCode='ko-KR',
             OutputFormat=output_format,
             VoiceId=voice_id
@@ -94,32 +98,32 @@ def synthesize_speech(text, voice_id='Seoyeon', output_format='mp3', speed=100):
         return response['AudioStream'].read()
         
     except Exception as e:
-        print(f"음성 합성 오류: {str(e)}")
+        print(f"Voice synthesis error: {str(e)}")
         return None
 ```
 
-## 🔧 사용 방법
+## 🔧 Usage
 
 ```python
-# 기본 사용법
-text = "안녕하세요! 오늘도 좋은 하루 되세요!"
+# Basic usage
+text = "Hello! Have a great day today!"
 audio_data = synthesize_speech(text)
 
-# 음성 파일로 저장
+# Save as voice file
 with open('output.mp3', 'wb') as f:
     f.write(audio_data)
 ```
 
-## 🧪 테스트
+## 🧪 Testing
 
 ```bash
-# TTS 시스템 테스트
+# Test TTS system
 python robo-polly.py
 ```
 
-## 📚 추가 리소스
+## 📚 Additional Resources
 
-- [AWS Polly 개발자 가이드](https://docs.aws.amazon.com/polly/)
-- [SSML 참조 가이드](https://docs.aws.amazon.com/polly/latest/dg/ssml.html)
-- [Polly 음성 목록](https://docs.aws.amazon.com/polly/latest/dg/voicelist.html)
-- [boto3 Polly 클라이언트 문서](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html)
+- [AWS Polly Developer Guide](https://docs.aws.amazon.com/polly/)
+- [SSML Reference Guide](https://docs.aws.amazon.com/polly/latest/dg/ssml.html)
+- [Polly Voice List](https://docs.aws.amazon.com/polly/latest/dg/voicelist.html)
+- [boto3 Polly Client Documentation](https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html)
