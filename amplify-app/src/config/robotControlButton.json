@@ -1,0 +1,95 @@
+{
+  "robotControlButtons": [
+    {
+      "text": "0-1",
+      "action": "from0to1",
+      "message": "포인트 0에서 1로 이동합니다",
+      "icon": "Navigation",
+      "color": "primary"
+    },
+    {
+      "text": "1-2",
+      "action": "from1to2",
+      "message": "포인트 1에서 2로 이동합니다",
+      "icon": "Navigation",
+      "color": "primary"
+    },
+    {
+      "text": "2-0",
+      "action": "from2to0",
+      "message": "포인트 2에서 0으로 이동합니다",
+      "icon": "Navigation",
+      "color": "primary"
+    },
+    {
+      "text": "쉬어",
+      "action": "normal",
+      "message": "네, 얌전히 있을게요",
+      "icon": "Pause",
+      "color": "error"
+    },
+    {
+      "text": "멈춰",
+      "action": "stop_move",
+      "message": "멈추겠습니다.",
+      "icon": "Stop",
+      "color": "error"
+    },
+    {
+      "text": "일어서",
+      "action": "stand",
+      "message": "일어서겠습니다!",
+      "icon": "VerticalAlignTop",
+      "color": "info"
+    },
+    {
+      "text": "앉기",
+      "action": "sit",
+      "message": "앉겠습니다!",
+      "icon": "VerticalAlignBottom",
+      "color": "info"
+    },
+    {
+      "text": "안녕",
+      "action": "hello",
+      "message": "안녕하세요! 반가워요!",
+      "icon": "WavingHand",
+      "color": "warning"
+    },
+    {
+      "text": "몸풀기",
+      "action": "stretch",
+      "message": "스트레칭을 해볼게요!",
+      "icon": "AccessibilityNew",
+      "color": "warning"
+    },
+    {
+      "text": "긁기",
+      "action": "scrape",
+      "message": "긁어볼게요!",
+      "icon": "TouchApp",
+      "color": "success"
+    },
+    {
+      "text": "하트",
+      "action": "heart",
+      "message": "사랑해요! 하트를 보여드릴게요!",
+      "icon": "Favorite",
+      "color": "success"
+    },
+    {
+      "text": "춤 1",
+      "action": "dance1",
+      "message": "첫 번째 춤을 춰볼게요!",
+      "icon": "MusicNote",
+      "color": "secondary"
+    },
+    {
+      "text": "춤 2",
+      "action": "dance2",
+      "message": "두 번째 춤을 춰볼게요!",
+      "icon": "MusicNote",
+      "color": "secondary"
+    }
+  ]
+}

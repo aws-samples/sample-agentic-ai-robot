@@ -1,0 +1,24 @@
+{
+    "region": "us-west-2",
+    "accountId": "YOUR_AWS_ACCOUNT_ID",
+    "projectName": "robo",
+    "model_id": "us.anthropic.claude-3-5-haiku-20241022-v1:0",
+    "s3_bucket_name": "YOUR_S3_BUCKET_NAME",
+    "agentcore_gateway_iam_role": "arn:aws:iam::YOUR_AWS_ACCOUNT_ID:role/AgentCoreGatewayRoleForrobo",
+    "cognito": {
+      "user_pool_name": "robo-agentcore-user-pool",
+      "user_pool_id": "YOUR_USER_POOL_ID",
+      "client_name": "robo-agentcore-client",
+      "client_id": "YOUR_COGNITO_CLIENT_ID",
+      "test_username": "YOUR_TEST_USERNAME",
+      "test_password": "YOUR_TEST_PASSWORD"
+    },
+    "lambda_function_arn": "arn:aws:lambda:us-west-2:YOUR_AWS_ACCOUNT_ID:function:lambda-mcp-interface-for-robo",
+    "secret_name": "robo/credentials",
+    "gateway_name": "robo",
+    "gateway_url": "YOUR_GATEWAY_URL",
+    "gateway_id": "YOUR_GATEWAY_ID",
+    "target_name": "mcp-interface",
+    "target_id": "YOUR_TARGET_ID"
+}
+

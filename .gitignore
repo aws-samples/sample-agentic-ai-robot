@@ -1,0 +1,58 @@
+# Sensitive configuration files
+**/config.json
+**/amplify_outputs.json
+**/env.json
+amplify-frontend/src/amplify_outputs.json
+amplify-frontend/src/env.json
+agent-runtime/config/config.json
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Local environment files
+.env
+.env.local
+.env.*.local
+
+# AWS credentials
+.aws/
+*.pem
+*.p12
+*.key
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Node modules
+node_modules/
+
+# Build outputs
+dist/
+build/
+*.zip
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test files with sensitive data
+**/test_*.py
+**/test*.py
+
+# Temporary files
+*.log
+*.tmp
+*.bak
+
