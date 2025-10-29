@@ -42,7 +42,7 @@ This component implements an MCP server that converts natural language commands 
 
 ## 📋 MCP Interface Tool Spec
 
-Robot control commands consist of `action` and `message`. Currently supports 4 basic emotional state actions for the robot.
+Robot control commands consist of `action` and `message`. Currently support 4 basic emotional state actions for the robot.
 
 ### Tool Schema Definition
 
