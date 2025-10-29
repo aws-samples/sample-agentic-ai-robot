@@ -46,36 +46,36 @@ A **cloud-native, event-driven system** that integrates **Physical AI**, **Agent
 
 ## 🔍 Core Components
 
-### 🧠 Agentic AI for Autonomous Robotics
+## 🧠 Agentic AI for Autonomous Robotics
 
-- Multi-modal understanding of environmental conditions (text, vision, and sensor data) 
-- **Dynamic Task Planning** and context-aware decision-making using **Strands Agent SDK**
-- AI Agent and MCP server deployed in the **Bedrock AgentCore** environment
-- Natural language to robot command translation through **MCP-integrated tools**
+- **LLM-driven Autonomy**: Powers intelligent decision-making beyond pre-programmed logic
+- **Bedrock AgentCore Deployment**: AI Agent and MCP server operate in unified environment, following an Agentic AI pattern
+- **Dynamic Planning**: Interprets complex situations and plans patrol routes by integrating sensor data, video analysis, and user requests
+- **Context-aware Decision**: Maintains operational context for intelligent response to unpredictable situations
 
-### 🗣️ Natural Language Command Interface
-- **Intent Recognition**: "Patrol zone A" → structured robot control commands
-- **Contextual Understanding**: Maintains conversation history and environmental context
-- **MCP Server Integration**: Translates high-level instructions into precise robotic actions
+## 🗣️ Natural Language Command Interface
 
-### 🤖 Physical AI System
-- The robot acts as an **autonomous agent** capable of real-world action
-- Performs patrols, detects hazards (e.g., fire, abnormal human gestures, gas leaks)
-- **Edge-Cloud Hybrid Processing**: Optimizes latency through distributed inference architecture
+- **Conversational Control**: Enables intuitive robot control (e.g., "Patrol the storage area")
+- **Intelligent Query**: Performs intent recognition and converts user requests into structured commands
+- **MCP Protocol**: Standardized, extensible interface between AI Agent and robot hardware, ensuring natural language maps directly to precise robotic actions
 
-### 📡 IoT and Edge Intelligence
-- Real-time sensor and telemetry data collection via **AWS IoT Core**
-- Edge inference for low-latency detection using **AWS IoT Greengrass**
-- Secure communication between robots and cloud systems
+## 🤖 Physical AI: IoT-Enabled Robotics
 
-### 📹 Real-time Video Processing & Analysis
-- Real-time video data streaming through **Amazon Kinesis Video Streams**
-- Video analysis through AI models on Greengrass or in the cloud
-- Real-time processing for hazardous situation detection
+- **Autonomous Embodiment**: Robot acts as physical embodiment of AI agent for real-world action
+- **Real-world Task Execution**: Autonomous patrolling and hazard detection (fire, unsafe gestures, gas leaks, etc.)
+- **Edge-Cloud Hybrid Architecture**: Distributed inference optimizes response time and computational efficiency
 
-### 📊 Data Integration & Visualization
-- Integration of robot status, system status, and IoT sensor metrics through **AWS IoT SiteWise**
-- Operational dashboards with **Amazon Managed Grafana**
+## 📡 IoT & Edge Intelligence
+
+- **Secure Device Communication**: **AWS IoT Core** manages bidirectional data flow between robot fleet and cloud
+- **Distributed Processing**: AWS IoT Greengrass enables low-latency edge inference; cloud performs deep analysis
+- **Real-time Video Streaming**: **Amazon Kinesis Video Streams** delivers live footage for cloud-based analysis
+
+## 📊 Data Integration & Visualization
+
+- **Centralized Data Integration**: **AWS IoT SiteWise** aggregates robot telemetry, sensor metrics, and system status
+- **Unified Dashboard**: Amazon Managed Grafana provides real-time operational visibility
+- **Seamless Feedback Loop**: Continuous interaction between robot, AI agent, and human operators
 
 ## ⚙️ Key AWS Services
 
