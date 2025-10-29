@@ -101,7 +101,7 @@ A **cloud-native, event-driven system** that integrates **Physical AI**, **Agent
 ### Prerequisites
 
 - **AWS Account** with Bedrock access enabled
-- **Python 3.9+** and pip
+- **Python 3.11+** and pip
 - **Node.js 18+** and npm/yarn
 - **AWS CLI** configured with appropriate permissions
 - Basic understanding of AI agents and IoT concepts
