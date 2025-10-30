@@ -30,11 +30,11 @@ This demo showcases a next-generation industrial safety management solution that
 
 ## 🎥 Demo Video
 
-| Demo Video 1 | Demo Video 2 |
-|:---:|:---:|
-| [![Demo1](https://img.youtube.com/vi/plwrFz4fmFg/0.jpg)](https://www.youtube.com/shorts/plwrFz4fmFg) | [![Demo2](https://img.youtube.com/vi/qiS9_LSYsV8/0.jpg)](https://www.youtube.com/shorts/qiS9_LSYsV8) |
+This project was showcased at AWS AI x Industry Week 2025.
 
-*This project was showcased at AWS AI x Industry Week 2025*
+*Click the image to watch the full demo video ▶️*
+
+[![Demo](https://img.youtube.com/vi/NZp0gbaEAsU/0.jpg)](https://youtu.be/NZp0gbaEAsU)
 
 ---
 
