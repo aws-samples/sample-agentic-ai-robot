@@ -26,7 +26,7 @@ This demo showcases a next-generation industrial safety management solution that
 
 | Client App | Dashboard |
 |:---:|:---:|
-| [![Client App](./assets/client-app.png)](./assets/client-app.png) | [![Dashboard](./assets/dashboard.png)](./assets/dashboard.png) |
+| [![Client App](./assets/client-app.png)](./assets/client-app.png) | [![Dashboard](./assets/dashboard-connect.png)](./assets/dashboard-connect.png) |
 
 ## 🎥 Demo Video
 
