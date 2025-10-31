@@ -65,6 +65,20 @@ A **cloud-native, event-driven system** that integrates **Physical AI**, **Agent
 - **Real-world Task Execution**: Autonomous patrolling and hazard detection (fire, unsafe gestures, gas leaks, etc.)
 - **Edge-Cloud Hybrid Architecture**: Distributed inference optimizes response time and computational efficiency
 
+## 🔥 Safety Detection System
+
+### ML Training Pipeline
+- **YOLOv8-based Detection**: Custom trained model for industrial safety hazards
+- **Multi-class Detection**: Smoke, fire, and person-down detection capabilities
+- **Local & Cloud Training**: Support for both local training and AWS SageMaker
+- **ONNX Optimization**: Optimized models for edge deployment
+
+### Edge Inference Component
+- **AWS IoT Greengrass**: Real-time safety detection on edge devices
+- **Automatic Alerting**: Immediate notification system for detected hazards
+- **S3 Integration**: Automatic upload of detected incident images
+- **Configurable Thresholds**: Adjustable detection sensitivity per hazard type
+
 ## 📡 IoT & Edge Intelligence
 
 - **Secure Device Communication**: **AWS IoT Core** manages bidirectional data flow between robot fleet and cloud
@@ -181,6 +195,44 @@ A **cloud-native, event-driven system** that integrates **Physical AI**, **Agent
 | **lambda-iot-managers** | IoT data processing | AWS Lambda, AWS IoT Core, SQS |
 | **lambda-robo-controller** | Direct robot commands | AWS Lambda |
 | **polly-tts** | Text-to-speech | AWS Polly |
+| **ggv2-component-safetydetector** | Edge safety detection | AWS IoT Greengrass, ONNX |
+| **ml-training-safetydetection** | ML model training pipeline | YOLOv8, AWS SageMaker |
+
+### Safety Detection Components
+
+#### 🔥 ggv2-component-safetydetector
+AWS IoT Greengrass component for real-time safety detection on edge devices.
+
+**Features:**
+- Real-time detection of smoke, fire, and person-down incidents
+- ONNX-optimized inference for edge deployment
+- Automatic S3 upload of detected incident images
+- IoT Core integration for immediate alerting
+
+**Quick Start:**
+```bash
+cd ggv2-component-safetydetector
+gdk component build
+gdk component publish
+```
+
+#### 🧠 ml-training-safetydetection
+Complete ML training pipeline for industrial safety detection models.
+
+**Features:**
+- YOLOv8-based custom model training
+- Support for local and AWS SageMaker training
+- ONNX model export and optimization
+- Comprehensive dataset management
+
+**Quick Start:**
+```bash
+cd ml-training-safetydetection
+pip install ultralytics opencv-python onnxruntime numpy
+python complete_training.py
+```
+
+For detailed setup instructions, see the README files in each component directory.
 
 ## Contributors
 

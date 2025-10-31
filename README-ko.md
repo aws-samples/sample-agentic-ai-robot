@@ -65,6 +65,20 @@
 - **실세계 작업 실행**: 자율 순찰 및 위험 감지 (화재, 안전하지 않은 제스처, 가스 누출 등)
 - **에지-클라우드 하이브리드 아키텍처**: 분산 추론으로 응답 시간과 계산 효율성 최적화
 
+## 🔥 안전 감지 시스템
+
+### ML 훈련 파이프라인
+- **YOLOv8 기반 감지**: 산업 안전 위험 요소를 위한 커스텀 훈련 모델
+- **다중 클래스 감지**: 연기, 화재, 사람 쓰러짐 감지 기능
+- **로컬 및 클라우드 훈련**: 로컬 훈련과 AWS SageMaker 모두 지원
+- **ONNX 최적화**: 엣지 배포를 위한 최적화된 모델
+
+### 엣지 추론 컴포넌트
+- **AWS IoT Greengrass**: 엣지 디바이스에서 실시간 안전 감지
+- **자동 알림**: 감지된 위험에 대한 즉시 알림 시스템
+- **S3 통합**: 감지된 사고 이미지의 자동 업로드
+- **구성 가능한 임계값**: 위험 유형별 조정 가능한 감지 민감도
+
 ## 📡 IoT & Edge Intelligence
 
 - **보안 디바이스 통신**: **AWS IoT Core**가 로봇 플릿과 클라우드 간의 양방향 데이터 흐름 관리
@@ -182,6 +196,44 @@
 | **lambda-iot-managers** | IoT 데이터 처리 | AWS Lambda, AWS IoT Core, SQS |
 | **lambda-robo-controller** | 직접 로봇 명령 | AWS Lambda |
 | **polly-tts** | 텍스트 음성 변환 | AWS Polly |
+| **ggv2-component-safetydetector** | 엣지 안전 감지 | AWS IoT Greengrass, ONNX |
+| **ml-training-safetydetection** | ML 모델 훈련 파이프라인 | YOLOv8, AWS SageMaker |
+
+### 안전 감지 컴포넌트
+
+#### 🔥 ggv2-component-safetydetector
+엣지 디바이스에서 실시간 안전 감지를 위한 AWS IoT Greengrass 컴포넌트입니다.
+
+**기능:**
+- 연기, 화재, 사람 쓰러짐 사고의 실시간 감지
+- 엣지 배포를 위한 ONNX 최적화 추론
+- 감지된 사고 이미지의 자동 S3 업로드
+- 즉시 알림을 위한 IoT Core 통합
+
+**빠른 시작:**
+```bash
+cd ggv2-component-safetydetector
+gdk component build
+gdk component publish
+```
+
+#### 🧠 ml-training-safetydetection
+산업 안전 감지 모델을 위한 완전한 ML 훈련 파이프라인입니다.
+
+**기능:**
+- YOLOv8 기반 커스텀 모델 훈련
+- 로컬 및 AWS SageMaker 훈련 지원
+- ONNX 모델 내보내기 및 최적화
+- 포괄적인 데이터셋 관리
+
+**빠른 시작:**
+```bash
+cd ml-training-safetydetection
+pip install ultralytics opencv-python onnxruntime numpy
+python complete_training.py
+```
+
+자세한 설정 지침은 각 컴포넌트 디렉토리의 README 파일을 참조하세요.
 
 ## 기여자
 
