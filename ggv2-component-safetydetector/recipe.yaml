@@ -1,0 +1,49 @@
+---
+RecipeFormatVersion: "2020-01-25"
+ComponentName: "com.robot.SafetyDetector"
+ComponentVersion: "NEXT_PATCH"
+ComponentDescription: "Industrial safety detection component using ONNX YOLO model"
+ComponentPublisher: "Amazon Greengrass (yeonkp)"
+ComponentConfiguration:
+  DefaultConfiguration:
+    BUCKET_NAME: "industry-robot-detected-images"
+    IOT_ENDPOINT: "a1pm7vwlqx4dto-ats.iot.ap-northeast-2.amazonaws.com"
+    DETECT_COUNT: "1"
+    DETECT_INTERVAL: "0.2"
+    accessControl:
+      aws.greengrass.ipc.mqttproxy:
+        com.robot.SafetyDetector:mqttproxy:1:
+          policyDescription: Allows access to publish to IoT Core
+          operations:
+          - aws.greengrass#PublishToIoTCore
+          resources:
+          - '*'
+ComponentDependencies:
+  aws.greengrass.Nucleus:
+    VersionRequirement: ">=2.0.0"
+  aws.greengrass.StreamManager:
+    VersionRequirement: ">=2.0.0"
+Manifests:
+  - Platform:
+      os: linux
+    Lifecycle:
+      Install:
+        RequiresPrivilege: true
+        Script: |
+          #!/bin/bash
+          cd {artifacts:decompressedPath}/SafetyDetector
+          python3 -m venv venv
+          . ./venv/bin/activate
+          pip3 install --upgrade pip
+          pip3 install -r requirements.txt
+          echo "ONNX SafetyDetector install done"
+      Run:
+        RequiresPrivilege: true
+        Script: |
+          #!/bin/bash
+          cd {artifacts:decompressedPath}/SafetyDetector
+          . ./venv/bin/activate
+          python3 main.py
+    Artifacts:
+      - URI: s3://BUCKET_NAME/COMPONENT_NAME/COMPONENT_VERSION/SafetyDetector.zip
+        Unarchive: ZIP

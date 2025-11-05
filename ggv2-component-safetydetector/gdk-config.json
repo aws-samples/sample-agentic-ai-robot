@@ -1,0 +1,16 @@
+{
+  "gdk_version": "1.3.0",
+  "component": {
+    "com.robot.SafetyDetector": {
+      "author": "AWS IoT Greengrass",
+      "version": "NEXT_PATCH",
+      "build": {
+        "build_system": "zip"
+      },
+      "publish": {
+        "bucket": "industry-robot-safetycomponent",
+        "region": "ap-northeast-2"
+      }
+    }
+  }
+}

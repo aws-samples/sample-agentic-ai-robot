@@ -1,0 +1,8 @@
+.DS_Store
+greengrass-build/
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.gitignore
+README.md
