@@ -171,6 +171,40 @@ A **cloud-native, event-driven system** that integrates **Physical AI**, **Agent
    python mcp-interface/create_gateway_tool.py
    ```
 
+6. **Deploy Edge AI Safety Detection**
+   ```bash
+   # Navigate to Greengrass component
+   cd ../ggv2-component-safetydetector
+   
+   # Build and publish component
+   gdk component build
+   gdk component publish
+   
+   # Deploy through AWS IoT Console to your Greengrass device
+   ```
+
+### Edge AI Safety Detection Setup
+
+The **ggv2-component-safetydetector** provides real-time safety monitoring using computer vision at the edge:
+
+**Key Features:**
+- ONNX YOLO model for industrial safety detection
+- Real-time camera feed processing
+- Automatic violation image capture and S3 upload
+- IoT Core integration for instant alerts
+
+**Configuration Parameters:**
+- `BUCKET_NAME`: S3 bucket for detected images
+- `IOT_ENDPOINT`: Your AWS IoT endpoint
+- `DETECT_COUNT`: Detection threshold before alert
+- `DETECT_INTERVAL`: Detection frequency (seconds)
+
+**Deployment:**
+1. Configure AWS IoT Greengrass Core v2 on your edge device
+2. Build and publish the component using GDK
+3. Deploy through AWS IoT Console with your configuration
+4. Component automatically starts monitoring upon deployment
+
 ### Project Structure
 
 | Component | Purpose | Technology |
@@ -180,6 +214,8 @@ A **cloud-native, event-driven system** that integrates **Physical AI**, **Agent
 | **amplify-app** | Web interface | React, AWS Amplify |
 | **lambda-iot-managers** | IoT data processing | AWS Lambda, AWS IoT Core, SQS |
 | **lambda-robo-controller** | Direct robot commands | AWS Lambda |
+| **ggv2-component-safetydetector** | Edge AI safety detection | AWS IoT Greengrass, ONNX YOLO |
+| **ml-training-safetydetection** | ML model training pipeline | YOLOv8, ONNX |
 | **polly-tts** | Text-to-speech | AWS Polly |
 
 ## Contributors

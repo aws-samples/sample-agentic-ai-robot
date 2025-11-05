@@ -172,6 +172,40 @@
    python mcp-interface/create_gateway_tool.py
    ```
 
+6. **엣지 AI 안전 감지 배포**
+   ```bash
+   # Greengrass 컴포넌트로 이동
+   cd ../ggv2-component-safetydetector
+   
+   # 컴포넌트 빌드 및 게시
+   gdk component build
+   gdk component publish
+   
+   # AWS IoT 콘솔을 통해 Greengrass 디바이스에 배포
+   ```
+
+### 엣지 AI 안전 감지 설정
+
+**ggv2-component-safetydetector**는 엣지에서 컴퓨터 비전을 사용한 실시간 안전 모니터링을 제공합니다:
+
+**주요 기능:**
+- 산업 안전 감지를 위한 ONNX YOLO 모델
+- 실시간 카메라 피드 처리
+- 감지된 위반 사항의 자동 이미지 캡처 및 S3 업로드
+- 즉시 알림을 위한 IoT Core 통합
+
+**설정 매개변수:**
+- `BUCKET_NAME`: 감지된 이미지를 위한 S3 버킷
+- `IOT_ENDPOINT`: AWS IoT 엔드포인트
+- `DETECT_COUNT`: 알림 전 감지 임계값
+- `DETECT_INTERVAL`: 감지 빈도 (초)
+
+**배포:**
+1. 엣지 디바이스에서 AWS IoT Greengrass Core v2 구성
+2. GDK를 사용하여 컴포넌트 빌드 및 게시
+3. 설정과 함께 AWS IoT 콘솔을 통해 배포
+4. 배포 시 컴포넌트가 자동으로 모니터링 시작
+
 ### 프로젝트 구조
 
 | 구성 요소 | 용도 | 기술 |
@@ -181,6 +215,8 @@
 | **amplify-app** | 웹 인터페이스 | React, AWS Amplify |
 | **lambda-iot-managers** | IoT 데이터 처리 | AWS Lambda, AWS IoT Core, SQS |
 | **lambda-robo-controller** | 직접 로봇 명령 | AWS Lambda |
+| **ggv2-component-safetydetector** | 엣지 AI 안전 감지 | AWS IoT Greengrass, ONNX YOLO |
+| **ml-training-safetydetection** | ML 모델 훈련 파이프라인 | YOLOv8, ONNX |
 | **polly-tts** | 텍스트 음성 변환 | AWS Polly |
 
 ## 기여자
