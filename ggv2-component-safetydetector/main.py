@@ -51,7 +51,7 @@ class SafetyDetector:
             self.input_name = self.session.get_inputs()[0].name
             self.output_names = [output.name for output in self.session.get_outputs()]
             
-            logger.info("💻 CPU 모드로 ONNX 모델 로드 성공")
+            logger.info("CPU mode -  ONNX model load success")
             
         except Exception as e:
             logger.error(f"ONNX 모델 로드 실패: {e}")
